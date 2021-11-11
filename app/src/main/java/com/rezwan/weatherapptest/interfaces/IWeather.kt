@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface WeatherApi {
+interface IWeather {
     @GET("/data/2.5/find?")
     fun getWeatherData(
         @Query("lat") lat: Double,

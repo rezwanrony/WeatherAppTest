@@ -3,8 +3,8 @@ package com.rezwan.weatherapptest.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Sys {
-    @SerializedName("country")
+class CloudResponse {
+    @SerializedName("all")
     @Expose
-    var country: String? = null
+    var all: Int? = null
 }

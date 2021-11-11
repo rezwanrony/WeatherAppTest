@@ -2,7 +2,7 @@ package com.rezwan.weatherapptest.module
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.rezwan.weatherapptest.interfaces.WeatherApi
+import com.rezwan.weatherapptest.interfaces.IWeather
 import com.rezwan.weatherapptest.scope.WeatherApplicationScope
 import dagger.Module
 import dagger.Provides
@@ -13,8 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module(includes = [OkkHttpModule::class])
 class WeatherApiModule {
     @Provides
-    fun randomUsersApi(retrofit: Retrofit): WeatherApi {
-        return retrofit.create(WeatherApi::class.java)
+    fun randomUsersApi(retrofit: Retrofit): IWeather {
+        return retrofit.create(IWeather::class.java)
     }
 
     @WeatherApplicationScope

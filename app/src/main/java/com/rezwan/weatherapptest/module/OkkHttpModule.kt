@@ -3,7 +3,7 @@ package com.rezwan.weatherapptest.module
 import android.content.Context
 import android.util.Log
 import androidx.annotation.NonNull
-import com.rezwan.weatherapptest.interfaces.ApplicationContext
+import com.rezwan.weatherapptest.interfaces.IContext
 import com.rezwan.weatherapptest.scope.WeatherApplicationScope
 import dagger.Module
 import dagger.Provides
@@ -30,7 +30,7 @@ class OkkHttpModule {
 
     @Provides
     @WeatherApplicationScope
-    fun file(@ApplicationContext context: Context): File {
+    fun file(@IContext context: Context): File {
         return File(context.cacheDir, "HttpCache")
     }
 

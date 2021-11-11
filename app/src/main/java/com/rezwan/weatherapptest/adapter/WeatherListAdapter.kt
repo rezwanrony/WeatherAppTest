@@ -16,15 +16,15 @@ import com.rezwan.weatherapptest.ui.WeatherDetailsActivity
 import com.rezwan.weatherapptest.utility.Util
 import com.rezwan.weatherapptest.model.DataList
 
-class WeatherResultListAdepter(activity: Activity) :
-    RecyclerView.Adapter<WeatherResultListAdepter.WeatherResultListViewHolder?>() {
+class WeatherListAdapter(activity: Activity) :
+    RecyclerView.Adapter<WeatherListAdapter.WeatherResultListViewHolder?>() {
     private var weatherResultLists: List<DataList<Any?>>? = null
     private val activity: Activity
     private val typeface: Typeface
     @NonNull
     override fun onCreateViewHolder(@NonNull parent: ViewGroup, viewType: Int): WeatherResultListViewHolder {
         val view: View = LayoutInflater.from(parent.getContext())
-            .inflate(R.layout.list_weather_result_list, parent, false)
+            .inflate(R.layout.item_weatherlist, parent, false)
         return WeatherResultListViewHolder(view)
     }
 

@@ -34,11 +34,11 @@ import com.google.android.gms.common.api.PendingResult
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.location.*
 import com.rezwan.weatherapptest.R
-import com.rezwan.weatherapptest.adapter.WeatherResultListAdepter
+import com.rezwan.weatherapptest.adapter.WeatherListAdapter
 import com.rezwan.weatherapptest.application.WeatherApplication
 import com.rezwan.weatherapptest.components.MainActivityComponent
 import com.rezwan.weatherapptest.utility.Util
-import com.rezwan.weatherapptest.interfaces.WeatherApi
+import com.rezwan.weatherapptest.interfaces.IWeather
 import com.rezwan.weatherapptest.model.CurrentWeather
 import com.rezwan.weatherapptest.model.WeatherResultList
 import com.rezwan.weatherapptest.module.MainActivityModule
@@ -59,10 +59,10 @@ class HomeActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks,
     private var mLocationRequest: LocationRequest? = null
 
     @Inject
-    var weatherApi: WeatherApi? = null
+    var weatherApi: IWeather? = null
 
     @Inject
-    var adepter: WeatherResultListAdepter? = null
+    var adepter: WeatherListAdapter? = null
     override protected fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -253,7 +253,7 @@ class HomeActivity : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks,
     }
 
     private fun sendCustomNotifications(temp: String) {
-        val remoteViews = RemoteViews(getPackageName(), R.layout.custom_notification)
+        val remoteViews = RemoteViews(getPackageName(), R.layout.item_notification)
         remoteViews.setImageViewResource(R.id.left_image, R.mipmap.ic_launcher_round)
         remoteViews.setTextViewText(R.id.title, getResources().getString(R.string.app_name))
         remoteViews.setTextViewText(R.id.temperature, temp)

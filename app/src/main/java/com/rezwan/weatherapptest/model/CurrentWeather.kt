@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 class CurrentWeather {
     @SerializedName("coord")
     @Expose
-    var coord: Coord? = null
+    var coord: CoordinatesData? = null
 
     @SerializedName("weather")
     @Expose
@@ -18,7 +18,7 @@ class CurrentWeather {
 
     @SerializedName("main")
     @Expose
-    var main: Main? = null
+    var main: CurrentWeatherDetails? = null
 
     @SerializedName("visibility")
     @Expose
@@ -30,7 +30,7 @@ class CurrentWeather {
 
     @SerializedName("clouds")
     @Expose
-    var clouds: Clouds? = null
+    var clouds: CloudResponse? = null
 
     @SerializedName("dt")
     @Expose
@@ -38,7 +38,7 @@ class CurrentWeather {
 
     @SerializedName("sys")
     @Expose
-    var sys: Sys? = null
+    var sys: Country? = null
 
     @SerializedName("id")
     @Expose

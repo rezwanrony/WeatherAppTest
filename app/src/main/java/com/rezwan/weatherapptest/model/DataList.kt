@@ -14,11 +14,11 @@ class DataList<T> {
 
     @SerializedName("coord")
     @Expose
-    var coord: Coord? = null
+    var coord: CoordinatesData? = null
 
     @SerializedName("main")
     @Expose
-    var main: Main? = null
+    var main: CurrentWeatherDetails? = null
 
     @SerializedName("dt")
     @Expose
@@ -30,7 +30,7 @@ class DataList<T> {
 
     @SerializedName("sys")
     @Expose
-    var sys: Sys? = null
+    var sys: Country? = null
 
     @SerializedName("rain")
     @Expose
@@ -42,7 +42,7 @@ class DataList<T> {
 
     @SerializedName("clouds")
     @Expose
-    var clouds: Clouds? = null
+    var clouds: CloudResponse? = null
 
     @SerializedName("weather")
     @Expose
